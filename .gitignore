@@ -1,0 +1,11 @@
+spiritroot_embedding/*.swp
+spiritroot_embedding/*.o
+spiritroot_embedding/*.root
+spiritroot_embedding/*.log
+spiritroot_embedding/gphysi.dat
+spiritroot_embedding/core_dump*
+spiritroot_embedding/build
+spiritroot_embedding/!*/build
+spiritroot_embedding/.AppleDouble
+spiritroot_embedding/*.gi
+spiritroot_embedding/input/samurai_field_map.dat

@@ -1,0 +1,23 @@
+This scripts are for the submission to the parallel computation job scheduler to construct efficiency file with embedding method.
+The distribution of momentum is uniform according to "/data/RB230064/common_2024/efficiency/spiritroot_mc_submit/parameters/random_generator.config.par_p" (and d, t, h, a).
+
+---------------------------------------------------
+Momentum (Px*Px + Py*Py + Pz*Pz) : (0.01 ~ 1.5) GeV
+Theta : (0 ~ 90) deg
+Phi : (-180 ~ 180) deg
+---------------------------------------------------
+
+If you want to change the distribution, please refer to the previous example of Isobe san's. "/data/RB230064/jhpark/test/spiritroot.20200529/macros/batch/batch_mc_digi_embed108_pdtHe.sh.20200813"
+You should make generator file and feed it to the generator. (STSimpleEventGenerator Class)
+
+The file "submit_general_allmc.sh" will run the script "run_mc.C" and "run_digi.C" to make *digi.root file in "/tmp_work/" directory, 
+which you can store data up to few PB and they will be deleted in a week.
+
+The file "submit_general_allreco.sh" will run the script "run_reco.C" to make reconstructed file with embedding method.
+It will also generate in "/tmp_work/" directory.
+
+However, if you want to run all over the particles, you can submit with "run_submit_all_particles.sh" file.
+
+Once you find out that the submitted job has been finished incorrectly due to the time limit, you should figure out which file (pid and index number) was corrupted and rerun the scripts.
+If you have corrupted files of "mc" or "digi", you can start over with "run_stopped.sh". (ex. "./run_stopped 4 108"  means that run alpha particle with the number of 108)
+If you have, however, the correct file of "mc" or "digi", then you can only rerun the script of reconstruction via "run_stopped_reco.sh".

@@ -1,0 +1,9 @@
+# this is a comment
+NEvent		100
+#RandomMomentum 0.01 4.00
+RandomPt 0.01 1.8
+RandomRapidity -0.1 1.5
+VertexFile	VertexLocation_run2384_cut50_n8013.txt
+Particle	1000020040 # 211 for pion for some reasons
+#ThetaLimit    0 90
+PhiLimit    -180 180
